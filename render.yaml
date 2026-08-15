@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: product-studio
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DASHSCOPE_API_KEY
+        sync: false
+      - key: PORT
+        value: "8000"
